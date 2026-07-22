@@ -21,7 +21,7 @@ pub fn get_data(uri: &str) -> RawData {
         path: url_decode(get_parameter_value(&query, "path")),
         authority: url_decode(get_parameter_value(&query, "authority")),
         pbk: url_decode(get_parameter_value(&query, "pbk")),
-        security: get_parameter_value(&query, "security"),
+        security: Some(String::from("tls")),
         sid: url_decode(get_parameter_value(&query, "sid")),
         flow: get_parameter_value(&query, "flow"),
         sni: get_parameter_value(&query, "sni"),
